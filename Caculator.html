@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caculator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<h1>Caculator</h1>
+<body>
+    <table>
+        <tr>
+            <td colspan="2"><input type="number" name="collum1" id="collum1"></td>
+            <td colspan="2"><input type="number" name="collum2" id="collum2"></td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="Caculation('Add')">Addition(+)</button>
+            </td>
+            <td>
+                <button onclick="Caculation('Sub')">Subtraction(-)</button>
+            </td>
+            <td>
+                <button onclick="Caculation('Multi')">Mulyiplication(X)</button>
+            </td>
+            <td>
+                <button onclick="Caculation('Div')">Division(/)</button>
+            </td>
+    </table>
+    <p id="result"></p>
+    <script>
+        function Caculation(choice){
+            let firstNumber = parseFloat(document.getElementById("collum1").value);
+            let secondNumber = parseFloat(document.getElementById("collum2").value);
+            switch (choice) {
+                case "Add":
+                    let add = firstNumber + secondNumber;
+                    document.getElementById("result").innerText = "Result Division " + add;
+                    break;
+                case "Sub":
+                    let sub = firstNumber - secondNumber;
+                    sub =document.getElementById("result").innerText = "Result Division " + sub;
+                    break;
+                case "Multi":
+                    let multi = firstNumber * secondNumber ;
+                    multi = document.getElementById("result").innerText = "Result Division " + multi;
+                    break;
+                case "Div" :
+                    if (secondNumber !== 0){
+                        result = firstNumber / secondNumber;
+                        document.getElementById("result").innerText = "Result Division: " + result;
+                    } else {
+                        document.getElementById("result").innerText = "Cannot divide by zero";
+                    }
+                    break;
+                default:
+                    document.getElementById("result").innerText = "Invalid operation";
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
